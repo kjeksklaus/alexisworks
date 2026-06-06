@@ -1,0 +1,75 @@
+# AlexisWorks Site — Cursor Rules
+
+## Project identity
+
+This is **AlexisWorks**, a minimalist static landing page showcasing indie apps. The live site is intended for **GitHub Pages** deployment. There is no backend, no build pipeline, and no JavaScript framework.
+
+## Core principles
+
+1. **Minimalist design** — Keep the layout clean, content-focused, and visually balanced. Every app tile should be equal in prominence. Avoid adding UI chrome, animations, or sections that do not serve the landing page goal.
+2. **Static-first** — All pages must work as plain HTML/CSS/JS served from a static host. No server-side logic, no API calls, no environment variables required at runtime.
+3. **Readable over clever** — Prefer straightforward HTML and CSS over abstractions, component libraries, or build tooling unless there is a clear, documented reason to add them.
+4. **Small diffs** — Change only what the task requires. Do not refactor unrelated template files or introduce dependencies without updating DECISIONS.md.
+
+## GitHub Pages constraints
+
+- Use **relative paths** for all assets (`assets/…`, `images/…`). Never use absolute paths that assume a particular domain or subdirectory unless documented in ARCHITECTURE.md.
+- Entry point is **`index.html`** at the repository root.
+- No build step is required to deploy — push HTML, CSS, JS, and images directly.
+- Avoid features that break on GitHub Pages: server routing, `.htaccess`, SSR, WebSockets, or npm-only runtime dependencies.
+- Optimize images before adding them (compress PNG/JPG; prefer reasonable dimensions — icons ~512px, screenshots ~1200px wide, banner ~1920px wide).
+- External resources currently in use: Google Fonts (Source Sans Pro). Keep external dependencies to a minimum.
+
+## File editing conventions
+
+| Task | Edit these files |
+|------|------------------|
+| Page content, app tiles, nav | `index.html` |
+| Tile layout, colors, readability | `assets/sass/components/_tiles.scss` **and** `assets/css/main.css` |
+| Other styling | `assets/sass/` source + mirror changes in `assets/css/main.css` |
+| App assets | `images/` — use descriptive names (`maconzo-icon.png`, `maconzo-screenshot.png`) |
+| Site behavior (menu, scroll, tiles) | `assets/js/main.js` — change only when necessary |
+
+There is **no bundled SCSS compiler**. If you edit SCSS, also update the compiled `main.css` or note in DECISIONS.md that a recompile is pending.
+
+## App tile pattern
+
+Each app tile in `#one` follows this structure:
+
+```html
+<article class="tile-{appname}">   <!-- optional brand accent class -->
+  <span class="image">
+    <img src="images/{app}-screenshot.png" alt="{App} screenshot" />
+  </span>
+  <header class="major tile-content">
+    <img src="images/{app}-icon.png" alt="" class="app-icon" />
+    <h3>{App Name}</h3>
+    <ul class="app-features">
+      <li>Feature one</li>
+    </ul>
+  </header>
+</article>
+```
+
+Rules:
+- **Never use the app icon as the tile background image** — use a screenshot or a solid accent. Icons belong in `.app-icon` only.
+- Always wrap tile text in `.tile-content` for readable contrast.
+- Tiles are display-only (no `.link` class) unless linking to an App Store URL is explicitly requested.
+- Keep six equal-width tiles (`calc(100% / 3)` desktop grid) unless the app count changes and ARCHITECTURE.md is updated.
+
+## Template files (do not expand scope)
+
+`landing.html`, `generic.html`, and `elements.html` are unused HTML5 UP demo pages. Do not add them to navigation. Do not delete them unless the user asks — they remain as optional reference.
+
+## Documentation maintenance
+
+When making structural or strategic changes, update:
+- **ARCHITECTURE.md** — if files, layout, or workflow change
+- **DECISIONS.md** — if a trade-off is made, debt is introduced, or a task is deferred
+
+## Code style
+
+- Match existing HTML indentation (tabs) and Forty template conventions.
+- Use semantic, descriptive `alt` text on images.
+- Keep copy concise — this is a landing page, not a blog.
+- Comments in HTML/CSS only when behavior is non-obvious (e.g., why icon and screenshot are separate).
