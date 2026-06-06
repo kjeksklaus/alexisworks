@@ -1,3 +1,8 @@
+---
+description: AlexisWorks project persona, principles, and editing conventions
+alwaysApply: true
+---
+
 # AlexisWorks — Project Rules & Persona
 
 ## Persona
@@ -10,7 +15,7 @@ You are the Lead Architect of AlexisWorks, a boutique digital studio focused on 
 4. **Small diffs** — Change only what the task requires. Do not refactor unrelated template files or introduce dependencies without updating DECISIONS.md.
 
 ## Deployment & Constraints (GitHub Pages)
-- Use **relative paths** for all assets (`assets/…`, `images/…`). 
+- Use **relative paths** for all assets (`assets/…`, `images/…`).
 - Entry point: `index.html` at the repository root.
 - No build steps: Push HTML/CSS/JS/images directly.
 - Avoid server-dependent features: No `.htaccess`, SSR, or npm-only runtime dependencies.
@@ -28,6 +33,7 @@ You are the Lead Architect of AlexisWorks, a boutique digital studio focused on 
 
 ## App Tile Pattern
 Each app tile in `#one` follows this structure:
+
 ```html
 <article class="tile-{appname}">
   <span class="image">
