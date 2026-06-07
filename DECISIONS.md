@@ -18,6 +18,24 @@ This document records **why** key choices were made and what remains unfinished.
 
 **Trade-off:** Long-form app descriptions or App Store embeds would require either expanding tile content or adding new pages later.
 
+**Update:** Per-app **Privacy** and **Terms** pages are an exception — they live at `apps/{appname}/privacy.html` and `apps/{appname}/terms.html`, linked from the app tile via `.tile-legal`. The homepage remains the primary entry point.
+
+---
+
+### Per-app legal pages (`apps/{appname}/`)
+
+**Decision:** Each app with OAuth or store review requirements gets its own Privacy Policy and Terms of Service as standalone static HTML pages.
+
+**Why:**
+- Google OAuth and Apple App Review require clear, publicly accessible policy URLs.
+- Tile links (`Privacy` / `Terms`) on the homepage satisfy discoverability without cluttering other tiles.
+- Static HTML per app keeps policies independent and easy to update.
+
+**Rules:**
+- Add `.tile-legal` links only when both policy pages exist for that app.
+- Maconzo is the first implementation (`apps/maconzo/`).
+- Use relative paths (`../../assets/`) so GitHub Pages serves pages correctly from subfolders.
+
 ---
 
 ### Forty HTML5 UP template as foundation
@@ -127,7 +145,7 @@ This document records **why** key choices were made and what remains unfinished.
 | Initialize git repo and enable GitHub Pages | High | Required for deployment |
 | Replace placeholder apps 2–6 | Medium | Still using `pic02`–`pic06` and generic copy |
 | Update footer GitHub link | Medium | Currently `#` placeholder |
-| Verify `hello@alexisworks.com` | Low | Placeholder contact email |
+| Add legal pages for apps 2–6 | Medium | Maconzo done; others when apps ship |
 | Replace `banner.jpg` | Low | Still default Unsplash hero from template |
 | Remove or archive unused HTML demos | Low | `landing.html`, `generic.html`, `elements.html` — safe to delete when confirmed unneeded |
 | Add App Store links to tiles | Low | Requires restoring `.link` class + `target="_blank"` in `main.js` path |
@@ -193,6 +211,7 @@ This document records **why** key choices were made and what remains unfinished.
 | 2026-06-06 | Equal 3-column tile grid with `.tile-content` readability panels |
 | 2026-06-06 | Maconzo added as first real app (icon + screenshot + custom red accent) |
 | 2026-06-06 | Institutional memory docs initialized (`.cursorrules`, ARCHITECTURE.md, DECISIONS.md) |
+| 2026-06-07 | Maconzo Privacy & Terms pages at `apps/maconzo/`; `.tile-legal` links on Maconzo tile |
 
 ---
 

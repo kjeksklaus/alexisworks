@@ -74,6 +74,26 @@
 				}
 			}
 
+			.tile-legal {
+				@include vendor('display', 'flex');
+				gap: 1.5em;
+				@include vendor('justify-content', 'center');
+				margin-top: 1.25em;
+				position: relative;
+				width: 100%;
+				z-index: 3;
+
+				a {
+					color: inherit;
+					font-size: 0.85em;
+					text-decoration: underline;
+
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+
 			h3 {
 				font-size: 1.75em;
 				margin-bottom: 0;

@@ -27,6 +27,7 @@ You are the Lead Architect of AlexisWorks, a boutique digital studio focused on 
 | Content/Tiles/Nav | `index.html` |
 | Style | `assets/sass/` (update compiled `assets/css/main.css`) |
 | App Assets | `images/` (use descriptive names: `{app}-icon.png`) |
+| Legal Pages | `apps/{appname}/privacy.html` and `apps/{appname}/terms.html` |
 | Behavior | `assets/js/main.js` (only when necessary) |
 
 *Note: There is no bundled SCSS compiler. If you edit SCSS, update the compiled `main.css` or note the pending recompile in DECISIONS.md.*
@@ -46,5 +47,10 @@ Each app tile in `#one` follows this structure:
       <li>Feature one</li>
     </ul>
   </header>
+  <!-- Add only when both policy pages exist: -->
+  <nav class="tile-legal" aria-label="{App} legal">
+    <a href="apps/{appname}/privacy.html">Privacy</a>
+    <a href="apps/{appname}/terms.html">Terms</a>
+  </nav>
 </article>
 ```

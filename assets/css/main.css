@@ -2799,6 +2799,32 @@ input, select, textarea {
 					margin: 0.35em 0;
 				}
 
+			.tiles article .tile-legal {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				gap: 1.5em;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				margin-top: 1.25em;
+				position: relative;
+				width: 100%;
+				z-index: 3;
+			}
+
+				.tiles article .tile-legal a {
+					color: inherit;
+					font-size: 0.85em;
+					text-decoration: underline;
+				}
+
+					.tiles article .tile-legal a:hover {
+						opacity: 0.8;
+					}
+
 			.tiles article h3 {
 				font-size: 1.75em;
 				margin-bottom: 0;

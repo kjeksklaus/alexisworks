@@ -8,7 +8,7 @@ A single-page static landing site for **AlexisWorks** indie apps. Visitors see a
 
 | Layer | Technology | Notes |
 |-------|------------|-------|
-| Markup | HTML5 | `index.html` is the only public-facing page |
+| Markup | HTML5 | `index.html` is the homepage; per-app legal pages live under `apps/` |
 | Styles | CSS (+ SCSS source) | Precompiled `assets/css/main.css` is what the browser loads |
 | Scripts | jQuery 3 + HTML5 UP plugins | Menu, scroll, tile background setup |
 | Icons | Font Awesome 5 | Bundled in `assets/css/fontawesome-all.min.css` |
@@ -28,6 +28,10 @@ AlexisWorksSite/
 ├── ARCHITECTURE.md         # This file
 ├── DECISIONS.md            # Rationale and pending work
 ├── .cursorrules            # AI/editor guidance
+├── apps/
+│   └── mazonzo/
+│       ├── privacy.html    # Maconzo Privacy Policy
+│       └── terms.html      # Maconzo Terms of Service
 ├── images/
 │   ├── banner.jpg          # Hero background (CSS-referenced)
 │   ├── maconzo-icon.png    # Maconzo app icon (512px squircle)
@@ -84,7 +88,8 @@ Each `<article>` is one app card:
 2. **`.app-icon`** — Small visible icon (separate file from background).
 3. **`.tile-content`** — Dark semi-opaque panel ensuring text readability over any background.
 4. **`.app-features`** — Bullet list of key features.
-5. **Optional `.tile-{name}`** — Overrides accent color (e.g. `.tile-maconzo` uses red `#c62828`).
+5. **Optional `.tile-legal`** — Privacy/Terms links below the content panel (only when policy pages exist).
+6. **Optional `.tile-{name}`** — Overrides accent color (e.g. `.tile-maconzo` uses red `#c62828`).
 
 Tile CSS lives in `assets/sass/components/_tiles.scss` and is mirrored in `assets/css/main.css`.
 
@@ -93,7 +98,7 @@ Tile CSS lives in `assets/sass/components/_tiles.scss` and is mirrored in `asset
 ```
 z-index 1  :after   — dark tint
 z-index 2  :before  — accent color overlay (fades on hover)
-z-index 3  header   — .tile-content panel with text + icon
+z-index 3  header / .tile-legal — content panel and legal links
 ```
 
 On hover, `:before` opacity drops to 0, revealing the screenshot background.
@@ -150,6 +155,23 @@ No CI/CD required. Optionally add a `.nojekyll` file at root if GitHub Pages Jek
 3. Optionally add `.tile-{appname}` class and a matching accent color rule in `_tiles.scss` + `main.css`.
 4. Remove placeholder `<article>` blocks if fewer than six apps are needed.
 
+### Add legal pages for an app
+
+Required for Google OAuth and App Store review. Pattern: one folder per app.
+
+1. Create `apps/{appname}/privacy.html` and `apps/{appname}/terms.html`.
+2. Copy structure from `apps/maconzo/` — use `../../assets/` and `../../index.html` for relative paths.
+3. Add `.tile-legal` nav to the app's `<article>` in `index.html`:
+
+```html
+<nav class="tile-legal" aria-label="{App} legal">
+  <a href="apps/{appname}/privacy.html">Privacy</a>
+  <a href="apps/{appname}/terms.html">Terms</a>
+</nav>
+```
+
+Only add links when both policy pages exist. Placeholder apps 2–6 have no legal links yet.
+
 ### Change site copy or contact info
 
 Edit sections in `index.html` directly (`#banner`, `#two`, `#contact`, `#footer`).
@@ -164,7 +186,8 @@ Edit `assets/sass/libs/_vars.scss` and recompile or mirror to `main.css`.
 
 ## What is intentionally out of scope
 
-- Multi-page app detail sites (`landing.html` unused)
+- Multi-page app marketing sites (`landing.html` unused)
+- Per-app legal pages (`apps/{appname}/`) are in scope
 - Contact form backend
 - Analytics, CMS, or dynamic content
 - npm/build toolchain
