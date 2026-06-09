@@ -7,6 +7,7 @@
 /* Tiles */
 
 	.tiles {
+		@include vendor('align-items', 'stretch');
 		@include vendor('display', 'flex');
 		@include vendor('flex-wrap', 'wrap');
 		@include vendor('justify-content', 'center');
@@ -32,8 +33,10 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			cursor: default;
+			flex: 1 1 calc(100% / 3);
 			height: auto;
-			min-height: 28em;
+			max-width: calc(100% / 2);
+			min-height: 32em;
 			overflow: hidden;
 			position: relative;
 			width: calc(100% / 3);
@@ -53,6 +56,9 @@
 				z-index: 3;
 
 				&.tile-content {
+					@include vendor('display', 'flex');
+					@include vendor('flex-direction', 'column');
+					@include vendor('flex', '1');
 					background: rgba(30, 34, 54, 0.88);
 					border-radius: 0.65em;
 					padding: 1.75em;
@@ -84,7 +90,8 @@
 				@include vendor('display', 'flex');
 				gap: 1.5em;
 				@include vendor('justify-content', 'center');
-				margin-top: 1.25em;
+				margin-top: auto;
+				padding-top: 1.25em;
 				position: relative;
 				width: 100%;
 				z-index: 3;
@@ -199,12 +206,18 @@
 					background-color: #c62828;
 				}
 			}
+
+			&.tile-biotic-waves {
+				&:before {
+					background-color: #9a7b4f;
+				}
+			}
 		}
 
 		@include breakpoint('<=large') {
 			article {
 				@include padding(3em, 2.5em);
-				min-height: 26em;
+				min-height: 30em;
 			}
 		}
 
