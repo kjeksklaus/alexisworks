@@ -7,7 +7,8 @@
 /* Contact */
 
 	#contact {
-		border-bottom: solid 1px _palette(border);
+		border-top: solid 1px _palette(border);
+		border-bottom: 0;
 		overflow-x: hidden;
 
 		> .inner {
@@ -88,6 +89,36 @@
 				> :nth-child(2n - 1) {
 					@include padding(3em, 0, (0, 0, 0, 0));
 				}
+			}
+		}
+
+		> .inner.contact-inner {
+			display: block !important;
+			padding: 3.5em 0 2.5em 0 !important;
+			text-align: center;
+
+			> * {
+				border-right: 0 !important;
+				padding: 0 !important;
+				width: auto !important;
+			}
+
+			.contact-simple {
+				@include vendor('display', 'flex');
+				@include vendor('flex-wrap', 'wrap');
+				gap: 3em;
+				@include vendor('justify-content', 'center');
+				margin-bottom: 1.25em;
+
+				.contact-method {
+					text-align: left;
+				}
+			}
+
+			.contact-copyright {
+				color: _palette(fg-light);
+				font-size: 0.8em;
+				margin: 0;
 			}
 		}
 	}

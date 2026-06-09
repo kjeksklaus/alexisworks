@@ -12,6 +12,7 @@
 		@include vendor('flex-wrap', 'wrap');
 		@include vendor('justify-content', 'center');
 		border-top: 0 !important;
+		padding-bottom: 2.5em;
 
 		& + * {
 			border-top: 0 !important;
@@ -92,6 +93,7 @@
 				@include vendor('justify-content', 'center');
 				margin-top: auto;
 				padding-top: 1.25em;
+				padding-bottom: 1em;
 				position: relative;
 				width: 100%;
 				z-index: 3;
