@@ -9,6 +9,7 @@
 	.tiles {
 		@include vendor('display', 'flex');
 		@include vendor('flex-wrap', 'wrap');
+		@include vendor('justify-content', 'center');
 		border-top: 0 !important;
 
 		& + * {
@@ -36,6 +37,11 @@
 			overflow: hidden;
 			position: relative;
 			width: calc(100% / 3);
+
+			&:only-child {
+				max-width: 36em;
+				width: 100%;
+			}
 
 			.image {
 				display: none;

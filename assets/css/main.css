@@ -2722,6 +2722,10 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
 		border-top: 0 !important;
 	}
 
@@ -2761,6 +2765,11 @@ input, select, textarea {
 			position: relative;
 			width: calc(100% / 3);
 		}
+
+			.tiles article:only-child {
+				max-width: 36em;
+				width: 100%;
+			}
 
 			.tiles article .image {
 				display: none;

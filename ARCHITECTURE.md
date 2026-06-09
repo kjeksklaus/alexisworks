@@ -148,12 +148,15 @@ No CI/CD required. Optionally add a `.nojekyll` file at root if GitHub Pages Jek
 ### Add or update an app tile
 
 1. Add `{app}-icon.png` and `{app}-screenshot.png` to `images/`.
-2. Edit the corresponding `<article>` in `index.html`:
+2. Uncomment a placeholder `<article>` in `index.html` (inside the `<!-- Placeholder tiles -->` block) or duplicate the Maconzo tile structure.
+3. Edit the `<article>`:
    - Screenshot → hidden `.image img`
    - Icon → `.app-icon`
    - Name, features → `h3` and `.app-features`
-3. Optionally add `.tile-{appname}` class and a matching accent color rule in `_tiles.scss` + `main.css`.
-4. Remove placeholder `<article>` blocks if fewer than six apps are needed.
+4. Optionally add `.tile-{appname}` class and a matching accent color rule in `_tiles.scss` + `main.css`.
+5. Add `.tile-legal` links when privacy/terms pages exist.
+
+Only Maconzo is live; Apps 2–6 are commented out until those apps ship. The `article:only-child` CSS centers a single tile; the 3-column grid resumes automatically when 2+ tiles are active.
 
 ### Add legal pages for an app
 
