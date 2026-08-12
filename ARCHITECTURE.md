@@ -29,14 +29,23 @@ AlexisWorksSite/
 ├── DECISIONS.md            # Rationale and pending work
 ├── .cursorrules            # AI/editor guidance
 ├── apps/
-│   └── mazonzo/
-│       ├── privacy.html    # Maconzo Privacy Policy
-│       └── terms.html      # Maconzo Terms of Service
+│   ├── dockless/
+│   │   ├── privacy.html
+│   │   └── terms.html
+│   ├── biotic-waves/
+│   │   ├── privacy.html
+│   │   └── terms.html
+│   └── maconzo/            # Kept for later; not on homepage while delayed
+│       ├── privacy.html
+│       └── terms.html
 ├── images/
 │   ├── banner.jpg          # Hero background (CSS-referenced)
-│   ├── maconzo-icon.png    # Maconzo app icon (512px squircle)
+│   ├── dockless-icon.png
+│   ├── dockless-screenshot.png
+│   ├── biotic-waves-icon.png
+│   ├── maconzo-icon.png
 │   ├── maconzo-screenshot.png
-│   └── pic01.jpg … pic06.jpg  # Placeholder assets for apps 2–6
+│   └── pic01.jpg … pic06.jpg  # Placeholder assets for remaining apps
 └── assets/
     ├── css/
     │   ├── main.css        # Primary stylesheet (browser loads this)
@@ -156,7 +165,7 @@ No CI/CD required. Optionally add a `.nojekyll` file at root if GitHub Pages Jek
 4. Optionally add `.tile-{appname}` class and a matching accent color rule in `_tiles.scss` + `main.css`.
 5. Add `.tile-legal` links when privacy/terms pages exist.
 
-Only Maconzo is live; Apps 2–6 are commented out until those apps ship. The `article:only-child` CSS centers a single tile; the 3-column grid resumes automatically when 2+ tiles are active.
+Only Dockless and Biotic Waves are live on the homepage; remaining placeholder tiles stay commented out until those apps ship. Maconzo assets and legal pages remain in the repo for a later restore. With two tiles active, the equal 3-column grid applies (a single tile would center via `article:only-child`).
 
 ### Add legal pages for an app
 

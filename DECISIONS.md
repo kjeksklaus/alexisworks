@@ -144,8 +144,9 @@ This document records **why** key choices were made and what remains unfinished.
 |------|----------|-------|
 | Initialize git repo and enable GitHub Pages | High | Required for deployment |
 | Uncomment and customize placeholder tiles 2–6 | Medium | HTML commented out in `index.html`; uncomment when apps ship |
+| Restore Maconzo tile when ready | Medium | Assets + `apps/maconzo/` legal pages kept; currently off homepage |
 | Update footer GitHub link | Medium | Currently `#` placeholder |
-| Add legal pages for apps 2–6 | Medium | Maconzo done; others when apps ship |
+| Add legal pages for new apps | Medium | Dockless + Biotic Waves + Maconzo done; others when apps ship |
 | Replace `banner.jpg` | Low | Still default Unsplash hero from template |
 | Remove or archive unused HTML demos | Low | `landing.html`, `generic.html`, `elements.html` — safe to delete when confirmed unneeded |
 | Add App Store links to tiles | Low | Requires restoring `.link` class + `target="_blank"` in `main.js` path |
@@ -213,6 +214,7 @@ This document records **why** key choices were made and what remains unfinished.
 | 2026-06-06 | Institutional memory docs initialized (`.cursorrules`, ARCHITECTURE.md, DECISIONS.md) |
 | 2026-06-07 | Maconzo Privacy & Terms pages at `apps/maconzo/`; `.tile-legal` links on Maconzo tile |
 | 2026-06-07 | Placeholder app tiles (2–6) commented out in `index.html` until more apps ship; single-tile centered layout via `article:only-child` |
+| 2026-08-11 | Dockless shipped on homepage (Privacy/Terms + slate accent); Maconzo temporarily removed from live tiles pending delay; live apps are Dockless + Biotic Waves |
 
 ---
 

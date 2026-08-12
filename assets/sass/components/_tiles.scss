@@ -209,6 +209,12 @@
 				}
 			}
 
+			&.tile-dockless {
+				&:before {
+					background-color: #374151;
+				}
+			}
+
 			&.tile-biotic-waves {
 				&:before {
 					background-color: #9a7b4f;

@@ -2949,6 +2949,10 @@ input, select, textarea {
 				background-color: #c62828;
 			}
 
+			.tiles article.tile-dockless:before {
+				background-color: #374151;
+			}
+
 			.tiles article.tile-biotic-waves:before {
 				background-color: #9a7b4f;
 			}
