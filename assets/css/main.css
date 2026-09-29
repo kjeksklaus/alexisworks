@@ -2957,6 +2957,10 @@ input, select, textarea {
 				background-color: #9a7b4f;
 			}
 
+			.tiles article.tile-idock:before {
+				background-color: #3d7eb8;
+			}
+
 		@media screen and (max-width: 1280px) {
 
 			.tiles article {

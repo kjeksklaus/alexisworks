@@ -220,6 +220,12 @@
 					background-color: #9a7b4f;
 				}
 			}
+
+			&.tile-idock {
+				&:before {
+					background-color: #3d7eb8;
+				}
+			}
 		}
 
 		@include breakpoint('<=large') {
