@@ -81,8 +81,8 @@ AlexisWorksSite/
 │  #banner — hero (AlexisWorks)       │
 ├─────────────────────────────────────┤
 │  #main                              │
-│    #one  — .tiles (6 app cards)     │
 │    #two  — About AlexisWorks        │
+│    #one  — .tiles (published apps)  │
 ├─────────────────────────────────────┤
 │  #contact — email + location        │
 ├─────────────────────────────────────┤

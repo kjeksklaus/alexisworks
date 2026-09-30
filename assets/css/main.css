@@ -2982,7 +2982,9 @@ input, select, textarea {
 
 			.tiles article {
 				padding: 3em 1.5em 3em 1.5em ;
-				min-height: 22em;
+				max-width: none;
+				min-height: 0;
+				width: 100% !important;
 			}
 
 				.tiles article h3 {
@@ -2998,7 +3000,8 @@ input, select, textarea {
 			}
 
 				.tiles article {
-					min-height: 20em;
+					max-width: none;
+					min-height: 0;
 					width: 100% !important;
 				}
 
@@ -3584,9 +3587,9 @@ input, select, textarea {
 				}
 
 		#banner.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
+			height: auto;
+			min-height: 0;
+			max-height: none;
 		}
 
 			#banner.major.alt {
@@ -3684,7 +3687,7 @@ input, select, textarea {
 				}
 
 				#banner.major {
-					padding: 8em 0 4em 0 ;
+					padding: 6em 0 2em 0 ;
 				}
 
 		}

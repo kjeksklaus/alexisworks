@@ -244,7 +244,9 @@
 		@include breakpoint('<=small') {
 			article {
 				@include padding(3em, 1.5em);
-				min-height: 22em;
+				max-width: none;
+				min-height: 0;
+				width: 100% !important;
 
 				h3 {
 					font-size: 1.5em;
@@ -256,7 +258,8 @@
 			display: block;
 
 			article {
-				min-height: 20em;
+				max-width: none;
+				min-height: 0;
 				width: 100% !important;
 			}
 		}
