@@ -2818,15 +2818,43 @@ input, select, textarea {
 				width: 4.5em;
 			}
 
+			.tiles article .tile-heading {
+				-moz-align-items: flex-start;
+				-webkit-align-items: flex-start;
+				-ms-align-items: flex-start;
+				align-items: flex-start;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: space-between;
+				-webkit-justify-content: space-between;
+				-ms-justify-content: space-between;
+				justify-content: space-between;
+				gap: 1em;
+				margin-bottom: 1.25em;
+				width: 100%;
+			}
+
+				.tiles article .tile-heading:after {
+					content: none;
+					display: none;
+				}
+
+				.tiles article .tile-heading .app-icon {
+					margin: 0;
+				}
+
 			.tiles article .rank-badge {
+				-moz-flex: 0 0 auto;
+				-webkit-flex: 0 0 auto;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
 				line-height: 1.15;
-				margin: 0;
-				position: absolute;
-				right: 1.75em;
+				margin: 0 0 0 auto;
+				position: static;
 				text-align: right;
-				top: 1.5em;
 				width: auto;
-				z-index: 4;
 			}
 
 				.tiles article .rank-badge:after {
@@ -2837,7 +2865,7 @@ input, select, textarea {
 				.tiles article .rank-badge .rank-badge-label {
 					color: #ffffff;
 					display: block;
-					font-size: 1rem;
+					font-size: 1.05rem;
 					font-weight: 500;
 					letter-spacing: -0.02em;
 					text-transform: none;
@@ -2861,17 +2889,17 @@ input, select, textarea {
 				}
 
 				.tiles article .rank-badge .rank-badge-rank {
-					border: 1px solid rgba(255, 255, 255, 0.55);
+					border: 1px solid rgba(255, 255, 255, 0.7);
 					border-radius: 0.4em;
 					color: #ffffff;
-					font-size: 0.8em;
+					font-size: 0.85rem;
 					font-weight: 500;
 					padding: 0.12em 0.45em;
 				}
 
 				.tiles article .rank-badge .rank-badge-category {
-					color: rgba(255, 255, 255, 0.45);
-					font-size: 0.95em;
+					color: rgba(255, 255, 255, 0.72);
+					font-size: 1.05rem;
 					font-weight: 500;
 				}
 
