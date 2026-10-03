@@ -75,6 +75,54 @@
 				width: 4.5em;
 			}
 
+			.rank-badge {
+				line-height: 1.15;
+				margin: 0;
+				position: absolute;
+				right: 1.75em;
+				text-align: right;
+				top: 1.5em;
+				width: auto;
+				z-index: 4;
+
+				&:after {
+					content: none;
+					display: none;
+				}
+
+				.rank-badge-label {
+					color: #ffffff;
+					display: block;
+					font-size: 1rem;
+					font-weight: 500;
+					letter-spacing: -0.02em;
+					text-transform: none;
+				}
+
+				.rank-badge-meta {
+					@include vendor('align-items', 'center');
+					@include vendor('display', 'flex');
+					@include vendor('justify-content', 'flex-end');
+					gap: 0.45em;
+					margin-top: 0.28em;
+				}
+
+				.rank-badge-rank {
+					border: 1px solid rgba(255, 255, 255, 0.55);
+					border-radius: 0.4em;
+					color: #ffffff;
+					font-size: 0.8em;
+					font-weight: 500;
+					padding: 0.12em 0.45em;
+				}
+
+				.rank-badge-category {
+					color: rgba(255, 255, 255, 0.45);
+					font-size: 0.95em;
+					font-weight: 500;
+				}
+			}
+
 			.app-features {
 				list-style: disc;
 				margin: 0.75em 0 0 0;
