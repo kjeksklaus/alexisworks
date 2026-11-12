@@ -3046,6 +3046,10 @@ input, select, textarea {
 				background-color: #3d7eb8;
 			}
 
+			.tiles article.tile-phev-ev:before {
+				background-color: #36a3e3;
+			}
+
 		@media screen and (max-width: 1280px) {
 
 			.tiles article {

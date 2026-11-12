@@ -29,6 +29,9 @@ AlexisWorksSite/
 ├── DECISIONS.md            # Rationale and pending work
 ├── .cursorrules            # AI/editor guidance
 ├── apps/
+│   ├── phev-ev/
+│   │   ├── privacy.html
+│   │   └── terms.html
 │   ├── idock/
 │   │   ├── privacy.html
 │   │   └── terms.html
@@ -43,6 +46,8 @@ AlexisWorksSite/
 │       └── terms.html
 ├── images/
 │   ├── banner.jpg          # Hero background (CSS-referenced)
+│   ├── phev-ev-icon.png
+│   ├── phev-ev-screenshot.png
 │   ├── idock-icon.png
 │   ├── idock-screenshot.png
 │   ├── dockless-icon.png
@@ -170,7 +175,7 @@ No CI/CD required. Optionally add a `.nojekyll` file at root if GitHub Pages Jek
 4. Optionally add `.tile-{appname}` class and a matching accent color rule in `_tiles.scss` + `main.css`.
 5. Add `.tile-legal` links when privacy/terms pages exist.
 
-Only Biotic Waves and iDock are live on the homepage; remaining placeholder tiles stay commented out until those apps ship. Dockless and Maconzo assets and legal pages remain in the repo for a later restore. With two tiles active, the equal 3-column grid applies (a single tile would center via `article:only-child`).
+PHEV.ev, Biotic Waves, and iDock are live on the homepage; remaining placeholder tiles stay commented out until those apps ship. Dockless and Maconzo assets and legal pages remain in the repo for a later restore. With three tiles active, the equal 3-column grid applies (a single tile would center via `article:only-child`).
 
 ### Add legal pages for an app
 

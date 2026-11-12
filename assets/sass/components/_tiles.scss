@@ -290,6 +290,12 @@
 					background-color: #3d7eb8;
 				}
 			}
+
+			&.tile-phev-ev {
+				&:before {
+					background-color: #36a3e3;
+				}
+			}
 		}
 
 		@include breakpoint('<=large') {
