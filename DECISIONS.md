@@ -144,7 +144,7 @@ This document records **why** key choices were made and what remains unfinished.
 |------|----------|-------|
 | Initialize git repo and enable GitHub Pages | High | Required for deployment |
 | Uncomment and customize placeholder tiles 2–6 | Medium | HTML commented out in `index.html`; uncomment when apps ship |
-| Restore Maconzo tile when ready | Medium | Assets + `apps/maconzo/` legal pages kept; currently off homepage |
+| Restore PHEV.ev and iDock when ready | Medium | Assets and legal pages kept; both off the homepage after review |
 | Update footer GitHub link | Medium | Currently `#` placeholder |
 | Add legal pages for new apps | Medium | PHEV.ev + iDock + Biotic Waves + Dockless + Maconzo done; others when apps ship |
 | Replace `banner.jpg` | Low | Still default Unsplash hero from template |
@@ -217,6 +217,7 @@ This document records **why** key choices were made and what remains unfinished.
 | 2026-08-11 | Dockless shipped on homepage (Privacy/Terms + slate accent); Maconzo temporarily removed from live tiles pending delay; live apps are Dockless + Biotic Waves |
 | 2026-09-29 | iDock shipped on homepage (Privacy/Terms + blue accent). Dockless removed from live tiles, kept in the repo like Maconzo. Published apps are Biotic Waves and iDock |
 | 2026-11-12 | PHEV.ev shipped on homepage (Privacy/Terms + blue accent). Published apps are PHEV.ev, iDock, and Biotic Waves |
+| 2026-11-24 | PHEV.ev and iDock taken off the homepage after review. Maconzo restored. Published apps are Maconzo and Biotic Waves |
 
 ---
 
